@@ -2,6 +2,16 @@
 
 ASR systems are not always confident of a certain word as the audio was unclear. For example, if a door slams or siren passes in the middle of a customer's utterance. In this project, we want to explore whether we can represent disrupted customer utterances, and recover this into a full representation with one additional turn.
 
+## Cite this work
+If you use this code, please cite the following paper:
+
+@inproceedings{angus2023,
+  title={Understanding Disrupted Sentences Using Underspecified Abstract Meaning Representation},
+  author={Addlesee, Angus and Damonte, Marco},
+  booktitle={Interspeech},
+  year={2023}
+}
+
 ## Aligning AMR
 
 In order to chop AMR effectively, alignment models can be used to specify which precise AMR subgraph represents a particular token. We implemented IBMs AMR alignment model [found here](https://github.com/IBM/transition-amr-parser). We use the output of this alignment model as the input to all the interruption/disruption scripts below.

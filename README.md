@@ -14,14 +14,12 @@ In order to investigate this probelm, we need a dataset of disrupted sentences a
 2. When we have the full sentence, but the last word is unclear (this is to determine whether this is an easier task). e.g: "She likes France and UNK"
 3. When a word is disrupted anywhere, including the middle of a sentence (same as 2, but not just at the end). e.g: "She likes UNK and Italy"
 
-Download the AMR you would like to disrupt, and put the `.txt` file in the `./chop-amr/input` directory. To chop the AMR with method (1), run the following (replacing amrFile with the name of your file):
+Download the AMR you would like to disrupt, and put the `.txt` file in the `./input` directory. To chop the AMR with method (1), run the following (replacing amrFile with the name of your file):
 
-    cd chop-amr
     python chopAMR.py ./input/amrFile.txt
 
-You wll find your chopped datasets in the `chop-amr/output` directory. You can uncomment the line marked "TODO Uncomment if you want the UNK tag" and rerun the above to chop with method (2). To chop with method (3), run the following:
+You wll find your chopped datasets in the `output` directory. You can uncomment the line marked "TODO Uncomment if you want the UNK tag" and rerun the above to chop with method (2). To chop with method (3), run the following:
 
-    cd chop-amr
     python disruptAMR.py ./input/amrFile.txt
 
 You should now have your corpora in the output file. NOTE: chopped AMR chunks are stored incrementally using the 'append' write method. This will continue appending if you rerun the scripts with the same inputs. We recommend moving to a directory called `stored` to preserve chopped AMR.

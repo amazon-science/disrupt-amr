@@ -39,3 +39,23 @@ You should now have your corpora in the output file. NOTE: chopped AMR chunks ar
 ## Training disrupted AMR models
 
 We are using the [SPRING](https://github.com/SapienzaNLP/spring) model for our full baseline and retrained models. Follow their setup instructions and edit `configs/config.yaml` to point at your dev, test, and train sets. You will also find the instructions to evaluate your trained SPRING models in their documentation.
+
+# Example Dialogues
+
+In the paper, we noted we would include some example dialogues for illustration purposes. These are real examples from our corpus, but the clarification request is invented (generating CRs is included in the future work section of the paper). Ideally these CRs would be uttered by some Everyday Voice Assistant (EVA).
+
+## Example 1 (UNK denotes where the ASR made a low-confidence prediction, maybe due to a siren passing)
+- User: "Where's UNK when you need him?"
+- EVA: "Sorry, I didn't cath all of that, where's who?"
+- User: "Homer Simpson"
+
+## Example 2 (No UNK as this is where a person paused mid-utterance, maybe due to memory problems))
+- User: "Route 288, the circumferential highway running around the south-western quadrant of the Richmond New Urban Region, opened in late"
+- EVA: "Apologies, I think I missed something there. In late when?"
+- User: "2004"
+
+## Example 3 (the model must identify where the UNK belongs amongst a variety of info)
+- User: "The quake occurred at 04:20 pm New Zealand local time (03:20 GMT) and the epic center was 90km northeast of UNK and at a depth of 2585km"
+- EVA: "Sorry, northeast of where?"
+- User: "Port-Vila"
+
